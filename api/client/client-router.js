@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const Clients = require('./clients-model');
+const Clients = require('./client-model');
 const restricted = require('../auth/restricted-middleware');
 
 function validRole(role) {

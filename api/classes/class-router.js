@@ -1,5 +1,5 @@
 const express = require('express');
-const Class = require('./classes-model');
+const Class = require('./class-model');
 const restricted = require('../auth/restricted-middleware');
 const router = express.Router()
 

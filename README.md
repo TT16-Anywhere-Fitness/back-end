@@ -25,8 +25,8 @@
 | - | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- 
 | 1 | GET    | /api/clients            | Returns all clients                                                                                                                     
 | 2 | GET    | /api/clients/:id        | Returns a specific client                                                                                                               
-| 3 | PUT    | /api/instructors/:id    | Updates the client information with the specified id using data from the request body and **returns the modified document**             
-| 4 | DELETE | /api/instructors/:id    | Removes the client with the specified id                                                                                               
+| 3 | PUT    | /api/clients/:id        | Updates the client information with the specified id using data from the request body and **returns the modified document**             
+| 4 | DELETE | /api/clients/:id        | Removes the client with the specified id                                                                                               
 
 
 ### Classes

@@ -12,4 +12,12 @@ server.get('/', (req,res) => {
     res.status(200).json('*** AnyWhere Fitness: API RUNNING ***')
 })
 
+server.use((err, req, res, next) => {
+    return res.status(500).json({ 
+      error: "ERROR: Problem with communicating to server",
+      message: err.message,
+      stack: err.stack
+     })
+  })
+
 module.exports = server;

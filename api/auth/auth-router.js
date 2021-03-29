@@ -43,9 +43,9 @@ router.post("/login", (req,res,next) => {
     const user = req.body
 
     if(!user.username || !user.password) {
-        res.status(400).json({message:"Log in requires valid role"})
+        res.status(400).json({message:"Log in requires valid username & password"})
     }
-    if(!user.role !== 2 && user.role !== 1) {
+    else if(user.role !== 2 && user.role !== 1) {
         res.status(400).json({message:"Log in requires valid role"})
     }
     Auth.findByName(user.username, user.role).then(logger =>{

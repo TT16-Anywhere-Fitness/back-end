@@ -13,7 +13,7 @@ function validRole(role) {
     })
 }
 
-router.get("/", restricted, validRole(1), (req,res) =>{
+router.get("/", restricted, validRole(2), (req,res) =>{
     Clients.find()
     .then(clients =>{
         res.status(200).json(clients)
@@ -23,7 +23,7 @@ router.get("/", restricted, validRole(1), (req,res) =>{
     })
 });
 
-router.get("/:id", restricted, validRole(1), (req,res) => {
+router.get("/:id", restricted, validRole(2), (req,res) => {
     const { id } = req.params
 
     Clients.findById(id)

@@ -1,0 +1,50 @@
+const db = require('../../data/db-config')
+
+function find(id, role) {
+    if(role === 1) {
+        return db("instructors").where("instructor_id", id).then(res =>{
+            return res[0]
+        })
+    }else {
+        return db("clients").where("client_id", id).then(res => {
+            return res[0]
+        })
+    }
+}
+
+function findByName(username, role) {
+    if(role === 1) {
+        return db.select("password as password", "username", "instructor_id", "role").from("instructors").where("username", username)
+        .then(res => {
+            return res [0]
+        })
+    }else {
+        return db.select("password as password", "username", "client_id", "role").from("clients").where("username", username)
+        .then(res =>{
+            return res[0]
+        })
+    }
+}
+
+function addInstructor(user) {
+    return db("instructors")
+    .insert({ "username": user.username, "password": user.password , "role": user.role})
+    .then(res => {
+        return findByName(user.username, user.role)
+    })
+}
+
+function addClient(user) {
+    return db("clients")
+    .insert({ "username": user.username, "password": user.password, "role": user.role})
+    .then(res => {
+        return findByName(user.username, user.role)
+    })
+}
+
+module.exports = {
+    find,
+    findByName,
+    addInstructor,
+    addClient,
+}

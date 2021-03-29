@@ -31,10 +31,21 @@
 
 ### Classes
 
-| N | Method | Endpoint                | Description                                                                                                                              |
+| N | Method | Endpoint                | Description                                                                                                                             
 | - | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- 
 | 1 | GET    | /api/classes            | Returns all fitness classes                                                                                                            
 | 2 | GET    | /api/classes/:id        | Returns a specific fitness class                                                                                                       
 | 3 | POST   | /api/classes            | Creates a fitness class using the information sent inside the request body and returns **the newly created classes object**             
 | 4 | PUT    | /api/classes/:id        | Updates the class with the specified id using data from the request body and **returns the modified document**, not the original        
-| 5 | DELETE | /api/classes/:id        | Removes a fitness class with the specified id                                                                                           
+| 5 | DELETE | /api/classes/:id        | Removes a fitness class with the specified id       
+
+
+### Locations
+
+| N | Method | Endpoint                | Description                                                                                                                             
+| - | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- 
+| 1 | GET    | /api/locations            | Returns all fitness locations                                                                                                         
+| 2 | GET    | /api/locations/:id        | Returns a specific fitness location                                                                                                   
+| 3 | POST   | /api/locations            | Creates a fitness location using the information sent inside the request body and returns **the newly created classes object**         
+| 4 | PUT    | /api/locations/:id        | Updates the location information with the specified id using data from the request body and **returns the modified document**      
+| 5 | DELETE | /api/locations/:id        | Removes a fitness location with the specified id       

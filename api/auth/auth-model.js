@@ -2,11 +2,11 @@ const db = require('../../data/db-config')
 
 function find(id, role) {
     if(role === 1) {
-        return db("instructors").where("instructor_id", id).then(res =>{
+        return db("instructors").where("id", id).then(res =>{
             return res[0]
         })
     }else {
-        return db("clients").where("client_id", id).then(res => {
+        return db("clients").where("id", id).then(res => {
             return res[0]
         })
     }
@@ -14,12 +14,12 @@ function find(id, role) {
 
 function findByName(username, role) {
     if(role === 1) {
-        return db.select("password as password", "username", "instructor_id", "role").from("instructors").where("username", username)
+        return db.select("password as password", "username", "id", "role").from("instructors").where("username", username)
         .then(res => {
             return res [0]
         })
     }else {
-        return db.select("password as password", "username", "client_id", "role").from("clients").where("username", username)
+        return db.select("password as password", "username", "id", "role").from("clients").where("username", username)
         .then(res =>{
             return res[0]
         })

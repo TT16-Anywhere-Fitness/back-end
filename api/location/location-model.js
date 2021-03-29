@@ -5,27 +5,27 @@ function find() {
 }
 
 function findBy(filter) {
-    return db("locations").where(filter).orderBy("location_id");
+    return db("locations").where(filter).orderBy("id");
 }
 
 function findById(id) {
-    return db("locations").where("location_id", id).first()
+    return db("locations").where("id", id).first()
 }
 
 function add(location) {
-    return db("locations").insert(location, "location_id")
+    return db("locations").insert(location, "id")
 }
 
 function update(id, location) {
     const locationId = id
-    return db("locations").where("location_id", id).update(location)
+    return db("locations").where("id", id).update(location)
     .then(() => {
-        return db("locations").where("location_id", locationId).first()
+        return db("locations").where("id", locationId).first()
     })
 }
 
 function remove(id) {
-    return db("locations").where("location_id",id).del()
+    return db("locations").where("id",id).del()
     .then(() => {
         return db("locations")
     })

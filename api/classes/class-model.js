@@ -5,23 +5,23 @@ function find() {
 }
 
 function findById(id) {
-    return db("classes").where("class_id", id).first()
+    return db("classes").where("id", id).first()
 }
 
 function add(classData) {
-    return db("classes").insert(classData, "class_id")
+    return db("classes").insert(classData, "id")
 }
 
 function update(id, classes) {
     const classId = id
-    return db("classes").where("class_id",id).update(classes)
+    return db("classes").where("id",id).update(classes)
     .then(() => {
-        return("classes").where("class_id", classId).first()
+        return("classes").where("id", classId).first()
     })
 }
 
 function remove(id) {
-    return db("classes").where("class_id", id).del()
+    return db("classes").where("id", id).del()
     .then(() => {
         return db("classes")
     })

@@ -1,32 +1,32 @@
 const db = require('../../data/db-config');
 
 function find() {
-    return db("instructors").select("instructor_id", "username").orderBy("instructor_id");
+    return db("instructors").select("id", "username").orderBy("id");
 }
 
 function findBy(filter) {
-    return db("instructors").where(filter).orderBy("instructor_id");
+    return db("instructors").where(filter).orderBy("id");
 }
 
 function findById(id) {
-    return db("instructors").where("instructor_id", id).first();
+    return db("instructors").where("id", id).first();
 }
 
 async function add(client) {
-    const [id] = await db("instructors").insert(client, "instructor_id");
+    const [id] = await db("instructors").insert(client, "id");
     return findById(id);
 }
 
 function update(id, client) {
     const instructorId = id
-    return db("instructors").where("instructor_id", id).update(client)
+    return db("instructors").where("id", id).update(client)
     .then(() => {
-        return db("instructors").where("instructor_id", instructorId).first()
+        return db("instructors").where("id", instructorId).first()
     })
 }
 
 function remove(id) {
-    return db("instructors").where("instructor_id", id).del()
+    return db("instructors").where("id", id).del()
     .then(() => {
         return db("instructors")
     })

@@ -14,7 +14,7 @@ exports.seed = function(knex) {
     },
     {
       id:3,
-      username:"kdolic",
+      username:"kdolic123",
       password:"lifting123",
       role:1
     },

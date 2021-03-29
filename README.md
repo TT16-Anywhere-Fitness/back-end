@@ -55,5 +55,6 @@
 
 | N | Method | Endpoint                | Description                                                                                                                             
 | - | ------ | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- 
-| 1 | GET    | /api/attending          | Returns all fitness classes with attending clients                                                                                        | 2 | GET    | /api/attending/:id      | Returns a specific fitness class being attended by ID                                                                                    | 3 | POST   | /api/attending/:id      | Adds client to class using the information sent inside the request body and returns **the newly created classes object**     
+| 1 | GET    | /api/attending          | Returns all fitness classes with attending clients                                                                                        | 2 | GET    | /api/attending/:id      | Returns a specific fitness class being attended by ID                                                                                 
+| 3 | POST   | /api/attending/:id      | Adds client to class using the information sent inside the request body and returns **the newly created classes object**     
 | 4 | DELETE | /api/attending/:id      | Removes client in class with the specified id       

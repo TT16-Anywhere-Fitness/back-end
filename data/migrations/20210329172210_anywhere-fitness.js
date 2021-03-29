@@ -1,41 +1,41 @@
 
 exports.up = function(knex) {
     return knex.schema.createTable("roles", tbl => {
-        tbl.increments();
+        tbl.increments('role_id');
         tbl.string("name",128).notNullable().unique()
     })
     .createTable("instructors", tbl => {
-        tbl.increments()
+        tbl.increments('instructor_id')
         tbl.string("username",128).notNullable().unique()
         tbl.string("password",128).notNullable()
         tbl.integer("role")
         .notNullable()
         .unsigned()
-        .references("id")
+        .references("role_id")
         .inTable("roles")
         .onDelete("CASCADE")
         .onUpdate("CASCADE")
     })
     .createTable("clients", tbl =>{
-        tbl.increments()
+        tbl.increments('client_id')
         tbl.string("username",128).notNullable().unique()
         tbl.string("password",128).notNullable()
         tbl.integer("role")
         .notNullable()
         .unsigned()
-        .references("id")
+        .references("role_id")
         .inTable("roles")
         .onDelete("CASCADE")
         .onUpdate("CASCADE")
     })
     .createTable("locations", tbl =>{
-        tbl.increments()
+        tbl.increments('location_id')
         tbl.string("location",128).notNullable()
         tbl.string("date",128).notNullable()
         tbl.string("startTime",128).notNullable()
     })
     .createTable("classes", tbl => {
-        tbl.increments()
+        tbl.increments('class_id')
         tbl.string("name",128).notNullable().unique()
         tbl.string("type",128).notNullable()
         tbl.string("level",128).notNullable()
@@ -45,7 +45,7 @@ exports.up = function(knex) {
         tbl.integer("location")
         .notNullable()
         .unsigned()
-        .references("id")
+        .references("location_id")
         .inTable("locations")
         .onDelete("CASCADE")
         .onUpdate("CASCADE")
@@ -55,14 +55,14 @@ exports.up = function(knex) {
         tbl.integer("client_id")
         .notNullable()
         .unsigned()
-        .references("id")
+        .references("client_id")
         .inTable("clients")
         .onDelete("CASCADE")
         .onUpdate("CASCADE")
         tbl.integer("class_id")
         .notNullable()
         .unsigned()
-        .references("id")
+        .references("class_id")
         .inTable("classes")
         .onDelete("CASCADE")
         .onUpdate("CASCADE")
@@ -77,9 +77,4 @@ exports.down = function(knex) {
     .dropTableIfExists("clients")
     .dropTableIfExists("instructors")
     .dropTableIfExists("roles")
-};
-};
-
-exports.down = function(knex) {
-  
 };

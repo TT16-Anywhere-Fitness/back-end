@@ -2,7 +2,6 @@ const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const express = require('express')
 const { jwtSecret } = require('../../config/secrets')
-const { isValid } = require('../../config/valid')
 const router = express.Router()
 const Auth = require('./auth-model')
 

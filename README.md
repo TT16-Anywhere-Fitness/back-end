@@ -42,6 +42,16 @@
 | 4 | PUT    | /api/classes/:id        | Updates the class with the specified id using data from the request body and **returns the modified document**, not the original        
 | 5 | DELETE | /api/classes/:id        | Removes a fitness class with the specified id       
 
+ex:  {
+        "id": 1,
+        "name": "Group Power",
+        "type": "Strength Training",
+        "level": "Advanced",
+        "duration": "2.5 hours",
+        "classSize": "15",
+        "attendees": "10",
+        "location": 1
+    },
 
 ### Locations
 

@@ -29,19 +29,6 @@ router.get("/:id", restricted, (req,res) => {
     })
 })
 
-router.post("/", restricted, (req,res) => {
-    Instructors.add(req.body)
-    .then(([id]) => {
-        return Instructors.findById(id)
-    })
-    .then(data => {
-        res.status(201).json(data)
-    })
-    .catch(err => {
-        res.status(500).json({message:"Failed to create instructor"})
-    })
-})
-
 router.put("/:id", restricted, (req, res) => {
     Instructors.update(req.params.id, req.body)
     .then(instructor => {

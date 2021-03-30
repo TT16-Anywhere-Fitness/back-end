@@ -11,6 +11,13 @@
 | 1 | POST   | /api/auth/register      | Signs up user for instructor or client role                                                                                             
 | 2 | POST   | /api/auth/login         | Logs in user                                                                                                                           
 
+```
+ex: {
+    "username": "client1",
+    "password": "password1234",
+    "role": 2
+}
+```
 
 ### Instructors
 
@@ -21,6 +28,12 @@
 | 3 | PUT    | /api/instructors/:id    | Updates the instructor with the specified id using data from the request body and **returns the modified document**, not the original   
 | 4 | DELETE | /api/instructors/:id    | Removes the instructor with the specified id                                                                                           
 
+```
+ex: {
+        "id": 1,
+        "username": "DavidGoggins"
+    },
+```
 
 ### Clients
 
@@ -31,6 +44,12 @@
 | 3 | PUT    | /api/clients/:id        | Updates the client information with the specified id using data from the request body and **returns the modified document**             
 | 4 | DELETE | /api/clients/:id        | Removes the client with the specified id                                                                                               
 
+```
+ex: {
+        "id": 5,
+        "username": "client1"
+    }
+```
 
 ### Classes
 
@@ -42,7 +61,8 @@
 | 4 | PUT    | /api/classes/:id        | Updates the class with the specified id using data from the request body and **returns the modified document**, not the original        
 | 5 | DELETE | /api/classes/:id        | Removes a fitness class with the specified id       
 
-``` ex:  {
+``` 
+ex:  {
         "id": 1,
         "name": "Group Power",
         "type": "Strength Training",
@@ -64,6 +84,14 @@
 | 4 | PUT    | /api/locations/:id      | Updates the location information with the specified id using data from the request body and **returns the modified document**      
 | 5 | DELETE | /api/locations/:id      | Removes a fitness location with the specified id       
 
+```
+ex:  {
+        "id": 1,
+        "location": "AnyWhere Fitness West",
+        "date": "3/29/2021",
+        "startTime": "5:00 a.m."
+    },
+```
 
 ### Attending
 
@@ -73,3 +101,9 @@
 | 2 | GET    | /api/attending/:id      | Returns a specific fitness class being attended by ID          
 | 3 | POST   | /api/attending/:id      | Adds client to class using the information sent inside the request body and returns **the newly created classes object**     
 | 4 | DELETE | /api/attending/:id      | Removes client in class with the specified id       
+
+```
+ex:  {
+        "id": 1
+    },
+```

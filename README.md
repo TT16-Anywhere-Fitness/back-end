@@ -1,5 +1,9 @@
 # Anywhere Fitness Back-End
 
+## Deployed via Heroku: https://anywherefitness-tt16.herokuapp.com/
+
+### Endpoints:
+
 ### Login / Register
 
 | N | Method | Endpoint                | Description                                                                                                                             

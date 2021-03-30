@@ -13,7 +13,7 @@ function validRole(role) {
     })
 }
 
-router.get("/", restricted, (req,res) => {
+router.get("/", (req,res) => {
     Class.find()
     .then(classes => {
         res.json(classes)

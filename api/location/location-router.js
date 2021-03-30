@@ -3,7 +3,7 @@ const restricted = require('../auth/restricted-middleware')
 const Locations = require('./location-model');
 const router = express.Router();
 
-router.get("/", restricted, (req,res) => {
+router.get("/", (req,res) => {
     Locations.find()
     .then(location => {
         res.json(location)

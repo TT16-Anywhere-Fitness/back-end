@@ -4,6 +4,7 @@ const express = require('express')
 const { jwtSecret } = require('../../config/secrets')
 const router = express.Router()
 const Auth = require('./auth-model')
+//auth
 
 router.post("/register", (req,res) => {
     const user = req.body

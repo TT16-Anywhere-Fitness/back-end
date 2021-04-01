@@ -16,7 +16,7 @@ function update(id, classes) {
     const classId = id
     return db("classes").where("id",id).update(classes)
     .then(() => {
-        return("classes").where("id", classId).first()
+        return db("classes").where("id", classId).first()
     })
 }
 
